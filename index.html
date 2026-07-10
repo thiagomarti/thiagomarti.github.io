@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Thiago Martiñá — Software Developer</title>
+<meta name="description" content="CV interactivo de Thiago Martiñá, desarrollador de software.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=Inter:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- Signature element: the "tape trail" — vertical progress spine styled like pinned paper tags -->
+<nav class="rail" id="rail" aria-label="Progreso de lectura">
+  <div class="rail-line"></div>
+  <div class="rail-fill" id="railFill"></div>
+  <ul class="rail-nodes" id="railNodes"></ul>
+</nav>
+
+<main id="main">
+
+  <!-- HERO / PERSONA CHOOSER -->
+  <section class="section hero" id="sec-hero" data-title="Inicio">
+    <div class="hero-eyebrow">✂ hecho con recortes</div>
+    <h1 class="hero-name">Thiago <span class="accent">Martiñá</span></h1>
+    <p class="hero-role">Software Developer — Buenos Aires, Argentina</p>
+
+    <div class="chooser">
+      <p class="chooser-prompt">Esta página cambia según quién la mire. Elegí tu recorrido:</p>
+      <div class="chooser-cards" id="chooserCards">
+        <button class="persona-card" data-persona="reclutador">
+          <span class="persona-icon">◆</span>
+          <span class="persona-title">Reclutador</span>
+          <span class="persona-desc">Resultados, experiencia y datos concretos, al frente.</span>
+        </button>
+        <button class="persona-card" data-persona="developer">
+          <span class="persona-icon">&lt;/&gt;</span>
+          <span class="persona-title">Developer</span>
+          <span class="persona-desc">Stack técnico, arquitectura y detalle de implementación.</span>
+        </button>
+        <button class="persona-card" data-persona="curioso">
+          <span class="persona-icon">✦</span>
+          <span class="persona-title">Curioseando</span>
+          <span class="persona-desc">La historia completa, sin apuro.</span>
+        </button>
+      </div>
+      <button class="skip-link" id="skipChooser">o mostrame todo en orden →</button>
+    </div>
+
+    <div class="scroll-hint" id="scrollHint">
+      <span>scrolleá</span>
+      <div class="scroll-hint-line"></div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="section about" id="sec-about" data-title="Sobre mí">
+    <span class="eyebrow">sobre mí</span>
+    <p class="about-text" data-persona-text
+       data-reclutador="Desarrollador de software con experiencia en proyectos productivos reales: desde cofundar mi propia agencia hasta sistemas críticos en producción para una empresa establecida. Encaro cada proyecto de punta a punta, con foco en entregar y en trabajar en equipo."
+       data-developer="Full-stack con foco en TypeScript de punta a punta: React y Vue en el front, Node/NestJS/Express + Prisma en el back, React Native y Expo (con EAS y Firebase) en mobile. Me interesa entender el problema completo, no solo escribir el código."
+       data-curioso="Soy Thiago. Arranqué investigando por mi cuenta —tutoriales, foros y, más adelante, bastante ayuda de la IA— armando páginas que hoy, mirándolas con perspectiva, me doy cuenta que eran bastante feas (Aun así les tengo cariño: fueron mis primeros pasos). De ahí pasé a hacerlo en serio para una editorial, después monté una agencia con amigos, y hoy desarrollo los sistemas de control y seguridad que usa SISIN para hogares, barrios privados y empresas.">
+       Desarrollador de software full-stack, con foco en mobile. Construyo productos de punta a punta —de la arquitectura al deploy— y disfruto tanto resolver un problema de performance como pulir el último detalle de una interfaz.
+    </p>
+    <div class="soft-skills">
+      <span>Buena gestión del tiempo</span>
+      <span>Trabajo en equipo</span>
+      <span>Detallista</span>
+      <span>Fácil adaptabilidad</span>
+      <span>Pensamiento analítico</span>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <section class="section stats" id="sec-stats" data-title="En números">
+    <span class="eyebrow">en números</span>
+    <div class="stats-grid">
+      <div class="stat">
+        <span class="stat-number" data-target="3" data-suffix="+">0</span>
+        <span class="stat-label">años programando</span>
+      </div>
+      <div class="stat">
+        <span class="stat-number" data-target="3" data-suffix="">0</span>
+        <span class="stat-label">empresas / proyectos</span>
+      </div>
+      <div class="stat">
+        <span class="stat-number" data-target="14" data-suffix="">0</span>
+        <span class="stat-label">tecnologías en uso activo</span>
+      </div>
+      <div class="stat">
+        <span class="stat-number" data-target="10" data-suffix="+">0</span>
+        <span class="stat-label">sistemas en producción</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section class="section experience" id="sec-experience" data-title="Experiencia">
+    <span class="eyebrow">experiencia laboral</span>
+    <h2 class="section-title">Dónde trabajé</h2>
+    <p class="section-hint">Tocá cada tarjeta para ver el detalle.</p>
+
+    <div class="exp-list">
+
+      <article class="exp-card" data-exp>
+        <div class="exp-head" role="button" tabindex="0" aria-expanded="false" aria-controls="exp-body-1">
+          <div>
+            <span class="exp-period">2026 — Actualidad</span>
+            <h3 class="exp-role">Desarrollador de Software</h3>
+            <span class="exp-company">SISIN S.R.L · Seguridad privada</span>
+          </div>
+          <span class="exp-toggle" aria-hidden="true">+</span>
+        </div>
+        <div class="exp-body" id="exp-body-1">
+          <p>Me desempeño como Desarrollador de Software participando en distintos proyectos de la empresa, entre ellos aplicaciones de control para hogares y barrios privados, un sistema de trackeo de flotas, el sistema de Recursos Humanos (RRHH) interno y un sistema de control de rondas para guardias de seguridad. Participo en todas las etapas del ciclo de desarrollo: análisis, diseño, implementación y depuración de software.</p>
+          <div class="exp-tags">
+            <span>Node.js</span><span>Express</span><span>React Native</span><span>React</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="exp-card" data-exp>
+        <div class="exp-head" role="button" tabindex="0" aria-expanded="false" aria-controls="exp-body-2">
+          <div>
+            <span class="exp-period">2024 — 2026</span>
+            <h3 class="exp-role">Desarrollador de Software · Co-fundador</h3>
+            <span class="exp-company">Hardstack · Agencia de desarrollo</span>
+          </div>
+          <span class="exp-toggle" aria-hidden="true">+</span>
+        </div>
+        <div class="exp-body" id="exp-body-2">
+          <p>Junto con dos compañeros más, inicié una agencia de desarrollo de software en la que trabajamos para distintas empresas creando sistemas de gestión, páginas web institucionales y páginas catálogo. Desarrollamos también sistemas integrales que combinaban aplicaciones móviles, de escritorio y web, implementando las APIs y la lógica de negocio correspondiente con Node.js y Express.</p>
+          <div class="exp-tags">
+            <span>Node.js</span><span>Express</span><span>React Native</span><span>Desktop</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="exp-card" data-exp>
+        <div class="exp-head" role="button" tabindex="0" aria-expanded="false" aria-controls="exp-body-3">
+          <div>
+            <span class="exp-period">2023</span>
+            <h3 class="exp-role">Desarrollador Web Junior</h3>
+            <span class="exp-company">Editorial Insomnes</span>
+          </div>
+          <span class="exp-toggle" aria-hidden="true">+</span>
+        </div>
+        <div class="exp-body" id="exp-body-3">
+          <p>Desarrollé una página web institucional a medida para Editorial Insomnes utilizando Vue.js, partiendo de un relevamiento previo de las necesidades del público al que apuntaba la marca. Ante la falta de una identidad visual definida, realicé además un trabajo de estudio de marca, armando la paleta de colores, tipografía y estilo general del sitio. Me encargué también de la maquetación responsive para distintos dispositivos y de la configuración y despliegue en un servicio de hosting.</p>
+          <div class="exp-tags">
+            <span>Vue.js</span><span>Branding</span><span>Responsive</span><span>Hosting</span>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- STACK -->
+  <section class="section stack" id="sec-stack" data-title="Stack">
+    <span class="eyebrow">stack</span>
+    <h2 class="section-title">Con qué trabajo</h2>
+
+    <div class="stack-grid">
+      <div class="stack-group">
+        <h3>Frontend</h3>
+        <div class="chips"><span>Vue.js</span><span>React</span><span>TypeScript</span><span>JavaScript</span></div>
+      </div>
+      <div class="stack-group">
+        <h3>Backend</h3>
+        <div class="chips"><span>Node.js</span><span>NestJS</span><span>Express</span><span>Prisma</span></div>
+      </div>
+      <div class="stack-group">
+        <h3>Mobile</h3>
+        <div class="chips"><span>React Native</span><span>Expo</span><span>EAS</span><span>Firebase</span></div>
+      </div>
+      <div class="stack-group">
+        <h3>Base de datos</h3>
+        <div class="chips"><span>MySQL</span></div>
+      </div>
+      <div class="stack-group">
+        <h3>Herramientas</h3>
+        <div class="chips"><span>Git</span><span>Manipulación de servidores</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CRAFT / MOBILE SPECIALTY -->
+  <section class="section craft" id="sec-craft" data-title="Especialidad">
+    <span class="eyebrow">mi fuerte</span>
+    <div class="craft-layout">
+      <div class="craft-text">
+        <h2 class="section-title">Donde más aporto: mobile</h2>
+        <p class="craft-copy">Hago de todo —web, back, desktop— pero cuando armamos equipo, mi lugar natural es el mobile. Ahí es donde más disfruto: React Native y Expo de punta a punta, desde la primera pantalla hasta la app corriendo en el celular. Me importa que se sienta nativa y no una web disfrazada: animaciones que reaccionan al tacto, estados de carga que no dejan a nadie mirando una pantalla en blanco.</p>
+        <button class="craft-replay" id="craftReplay" type="button">↻ reanimar</button>
+      </div>
+      <div class="phone-mock" id="phoneMock" aria-hidden="true">
+        <span class="scrap" style="--tx:-86px; --ty:-64px; --rot:-50deg;"></span>
+        <span class="scrap" style="--tx:78px; --ty:-80px; --rot:40deg;"></span>
+        <span class="scrap" style="--tx:-100px; --ty:20px; --rot:60deg;"></span>
+        <span class="scrap" style="--tx:96px; --ty:10px; --rot:-35deg;"></span>
+        <span class="scrap" style="--tx:-60px; --ty:100px; --rot:25deg;"></span>
+        <span class="scrap" style="--tx:70px; --ty:110px; --rot:-60deg;"></span>
+        <span class="scrap" style="--tx:-30px; --ty:-110px; --rot:80deg;"></span>
+        <span class="scrap" style="--tx:34px; --ty:120px; --rot:-20deg;"></span>
+        <div class="phone-frame">
+          <div class="phone-notch"></div>
+          <div class="phone-screen">
+            <span class="app-block bar"></span>
+            <span class="app-block card"></span>
+            <span class="app-block chip chip-a"></span>
+            <span class="app-block chip chip-b"></span>
+            <span class="app-block fab"></span>
+            <span class="app-block nav"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- UNLOCK / ACHIEVEMENT -->
+  <section class="section unlock" id="sec-unlock" data-title="Logro">
+    <div class="unlock-card" id="unlockCard">
+      <div class="unlock-lock" id="unlockLock" aria-hidden="true">
+        <span class="unlock-seal">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="5" y="11" width="14" height="9" rx="2"/>
+            <path d="M8 11V7a4 4 0 0 1 8 0v4"/>
+          </svg>
+        </span>
+      </div>
+      <div class="unlock-content" id="unlockContent">
+        <span class="eyebrow">logro desbloqueado</span>
+        <h2 class="section-title">Medalla de oro — SysApp, ONIET</h2>
+        <p>Reconocimiento nacional en la categoría de desarrollo de sistemas.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- EDUCATION + LANGUAGES -->
+  <section class="section education" id="sec-education" data-title="Educación">
+    <span class="eyebrow">educación</span>
+    <div class="edu-grid">
+      <div class="edu-block">
+        <h3>Título secundario en Ciencias Sociales y Humanidades</h3>
+        <p>Centro Educativo Siglo 21, Ituzaingó, Buenos Aires. Graduado en 2025.</p>
+      </div>
+      <div class="edu-block">
+        <h3>Inglés — Upper Intermediate (B2)</h3>
+        <p>Certificado B2 First (FCE), Cambridge English — 2025.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="section contact" id="sec-contact" data-title="Contacto">
+    <span class="eyebrow">contacto</span>
+    <h2 class="section-title">Hablemos</h2>
+    <p class="contact-hint">Ituzaingó, Buenos Aires, Argentina</p>
+    <div class="contact-links">
+      <a href="mailto:thiagomarti2008@gmail.com" class="contact-link">
+        <span class="contact-label">Email</span>
+        <span class="contact-value">thiagomarti2008@gmail.com</span>
+      </a>
+      <a href="tel:+541134104508" class="contact-link">
+        <span class="contact-label">Teléfono</span>
+        <span class="contact-value">+54 11 3410-4508</span>
+      </a>
+      <a href="https://github.com/thiagomarti" target="_blank" rel="noopener" class="contact-link">
+        <span class="contact-label">GitHub</span>
+        <span class="contact-value">github.com/thiagomarti</span>
+      </a>
+      <a href="https://www.linkedin.com/in/thiago-marti%C3%B1%C3%A1-369897254/" target="_blank" rel="noopener" class="contact-link">
+        <span class="contact-label">LinkedIn</span>
+        <span class="contact-value">linkedin.com/in/thiago-martiñá</span>
+      </a>
+    </div>
+    <footer class="footer">Hecho por Thiago Martiñá.</footer>
+  </section>
+
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
