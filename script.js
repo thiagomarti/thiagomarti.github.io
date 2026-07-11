@@ -9,7 +9,9 @@
 
   function applyLang(){
     document.documentElement.lang = lang === 'en' ? 'en' : 'es-AR';
-    langToggle.textContent = lang === 'en' ? 'ES' : 'EN';
+    langToggle.innerHTML = lang === 'en'
+      ? '<span class="flag flag-ar" aria-hidden="true"></span>ES'
+      : '<span class="flag flag-us" aria-hidden="true"></span>EN';
     langToggle.setAttribute('aria-label', lang === 'en' ? 'Cambiar a español' : 'Switch to English');
 
     if (metaDesc) metaDesc.setAttribute('content', lang === 'en' ? metaDesc.dataset.contentEn : metaDesc.dataset.contentEs || metaDesc.getAttribute('content'));
