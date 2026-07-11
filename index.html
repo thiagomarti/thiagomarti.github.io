@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Thiago Martiñá — Software Developer</title>
-<meta name="description" content="CV interactivo de Thiago Martiñá, desarrollador de software.">
+<meta name="description" content="CV interactivo de Thiago Martiñá, desarrollador de software." data-content-en="Interactive resume of Thiago Martiñá, software developer.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=Inter:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
@@ -13,7 +13,9 @@
 <body>
 
 <!-- Signature element: the "tape trail" — vertical progress spine styled like pinned paper tags -->
-<nav class="rail" id="rail" aria-label="Progreso de lectura">
+<button class="lang-toggle" id="langToggle" type="button" aria-label="Switch language / Cambiar idioma">EN</button>
+
+<nav class="rail" id="rail" aria-label="Progreso de lectura" data-aria-en="Reading progress">
   <div class="rail-line"></div>
   <div class="rail-fill" id="railFill"></div>
   <ul class="rail-nodes" id="railNodes"></ul>
@@ -22,99 +24,103 @@
 <main id="main">
 
   <!-- HERO / PERSONA CHOOSER -->
-  <section class="section hero" id="sec-hero" data-title="Inicio">
-    <div class="hero-eyebrow">✂ hecho con recortes</div>
+  <section class="section hero" id="sec-hero" data-title="Inicio" data-title-en="Home">
+    <div class="hero-eyebrow" data-en="✂ made from clippings">✂ hecho con recortes</div>
     <h1 class="hero-name">Thiago <span class="accent">Martiñá</span></h1>
     <p class="hero-role">Software Developer — Buenos Aires, Argentina</p>
 
     <div class="chooser">
-      <p class="chooser-prompt">Esta página cambia según quién la mire. Elegí tu recorrido:</p>
+      <p class="chooser-prompt" data-en="This page changes depending on who's looking. Pick your path:">Esta página cambia según quién la mire. Elegí tu recorrido:</p>
       <div class="chooser-cards" id="chooserCards">
         <button class="persona-card" data-persona="reclutador">
           <span class="persona-icon">◆</span>
-          <span class="persona-title">Reclutador</span>
-          <span class="persona-desc">Resultados, experiencia y datos concretos, al frente.</span>
+          <span class="persona-title" data-en="Recruiter">Reclutador</span>
+          <span class="persona-desc" data-en="Results, experience and concrete data, up front.">Resultados, experiencia y datos concretos, al frente.</span>
         </button>
         <button class="persona-card" data-persona="developer">
           <span class="persona-icon">&lt;/&gt;</span>
           <span class="persona-title">Developer</span>
-          <span class="persona-desc">Stack técnico, arquitectura y detalle de implementación.</span>
+          <span class="persona-desc" data-en="Technical stack, architecture and implementation detail.">Stack técnico, arquitectura y detalle de implementación.</span>
         </button>
         <button class="persona-card" data-persona="curioso">
           <span class="persona-icon">✦</span>
-          <span class="persona-title">Curioseando</span>
-          <span class="persona-desc">La historia completa, sin apuro.</span>
+          <span class="persona-title" data-en="Just curious">Curioseando</span>
+          <span class="persona-desc" data-en="The whole story, no rush.">La historia completa, sin apuro.</span>
         </button>
       </div>
-      <button class="skip-link" id="skipChooser">o mostrame todo en orden →</button>
+      <button class="skip-link" id="skipChooser" data-en="or show me everything in order →">o mostrame todo en orden →</button>
     </div>
 
     <div class="scroll-hint" id="scrollHint">
-      <span>scrolleá</span>
+      <span data-en="scroll">scrolleá</span>
       <div class="scroll-hint-line"></div>
     </div>
   </section>
 
   <!-- ABOUT -->
-  <section class="section about" id="sec-about" data-title="Sobre mí">
-    <span class="eyebrow">sobre mí</span>
+  <section class="section about" id="sec-about" data-title="Sobre mí" data-title-en="About me">
+    <span class="eyebrow" data-en="about me">sobre mí</span>
     <p class="about-text" data-persona-text
        data-reclutador="Desarrollador de software con experiencia en proyectos productivos reales: desde cofundar mi propia agencia hasta sistemas críticos en producción para una empresa establecida. Encaro cada proyecto de punta a punta, con foco en entregar y en trabajar en equipo."
+       data-reclutador-en="Software developer with experience on real production projects: from co-founding my own agency to critical production systems for an established company. I approach every project end-to-end, focused on delivering and working as a team."
        data-developer="Full-stack con foco en TypeScript de punta a punta: React y Vue en el front, Node/NestJS/Express + Prisma en el back, React Native y Expo (con EAS y Firebase) en mobile. Me interesa entender el problema completo, no solo escribir el código."
-       data-curioso="Soy Thiago. Arranqué investigando por mi cuenta —tutoriales, foros y, más adelante, bastante ayuda de la IA— armando páginas que hoy, mirándolas con perspectiva, me doy cuenta que eran bastante feas (Aun así les tengo cariño: fueron mis primeros pasos). De ahí pasé a hacerlo en serio para una editorial, después monté una agencia con amigos, y hoy desarrollo los sistemas de control y seguridad que usa SISIN para hogares, barrios privados y empresas.">
+       data-developer-en="Full-stack with TypeScript end-to-end: React and Vue on the front, Node/NestJS/Express + Prisma on the back, React Native and Expo (with EAS and Firebase) on mobile. I care about understanding the full problem, not just writing the code."
+       data-curioso="Soy Thiago. Arranqué investigando por mi cuenta —tutoriales, foros y, más adelante, bastante ayuda de la IA— armando páginas que hoy, mirándolas con perspectiva, me doy cuenta que eran bastante feas (Aun así les tengo cariño: fueron mis primeros pasos). De ahí pasé a hacerlo en serio para una editorial, después monté una agencia con amigos, y hoy desarrollo los sistemas de control y seguridad que usa SISIN para hogares, barrios privados y empresas."
+       data-curioso-en="I'm Thiago. I started out figuring things out on my own —tutorials, forums, and later a lot of help from AI— building pages that, looking back, were pretty ugly (I'm still fond of them though: they were my first steps). From there I started doing it seriously for a publishing house, then set up an agency with friends, and today I build the control and security systems SISIN uses for homes, gated communities and businesses."
+       data-en="Full-stack software developer, focused on mobile. I build products end-to-end —from architecture to deploy— and enjoy solving a performance problem as much as polishing the last detail of an interface.">
        Desarrollador de software full-stack, con foco en mobile. Construyo productos de punta a punta —de la arquitectura al deploy— y disfruto tanto resolver un problema de performance como pulir el último detalle de una interfaz.
     </p>
     <div class="soft-skills">
-      <span>Buena gestión del tiempo</span>
-      <span>Trabajo en equipo</span>
-      <span>Detallista</span>
-      <span>Fácil adaptabilidad</span>
-      <span>Pensamiento analítico</span>
+      <span data-en="Good time management">Buena gestión del tiempo</span>
+      <span data-en="Teamwork">Trabajo en equipo</span>
+      <span data-en="Detail-oriented">Detallista</span>
+      <span data-en="Quick to adapt">Fácil adaptabilidad</span>
+      <span data-en="Analytical thinking">Pensamiento analítico</span>
     </div>
   </section>
 
   <!-- STATS -->
-  <section class="section stats" id="sec-stats" data-title="En números">
-    <span class="eyebrow">en números</span>
+  <section class="section stats" id="sec-stats" data-title="En números" data-title-en="By the numbers">
+    <span class="eyebrow" data-en="by the numbers">en números</span>
     <div class="stats-grid">
       <div class="stat">
         <span class="stat-number" data-target="3" data-suffix="+">0</span>
-        <span class="stat-label">años programando</span>
+        <span class="stat-label" data-en="years coding">años programando</span>
       </div>
       <div class="stat">
         <span class="stat-number" data-target="3" data-suffix="">0</span>
-        <span class="stat-label">empresas / proyectos</span>
+        <span class="stat-label" data-en="companies / projects">empresas / proyectos</span>
       </div>
       <div class="stat">
         <span class="stat-number" data-target="14" data-suffix="">0</span>
-        <span class="stat-label">tecnologías en uso activo</span>
+        <span class="stat-label" data-en="technologies in active use">tecnologías en uso activo</span>
       </div>
       <div class="stat">
         <span class="stat-number" data-target="10" data-suffix="+">0</span>
-        <span class="stat-label">sistemas en producción</span>
+        <span class="stat-label" data-en="systems in production">sistemas en producción</span>
       </div>
     </div>
   </section>
 
   <!-- EXPERIENCE -->
-  <section class="section experience" id="sec-experience" data-title="Experiencia">
-    <span class="eyebrow">experiencia laboral</span>
-    <h2 class="section-title">Dónde trabajé</h2>
-    <p class="section-hint">Tocá cada tarjeta para ver el detalle.</p>
+  <section class="section experience" id="sec-experience" data-title="Experiencia" data-title-en="Experience">
+    <span class="eyebrow" data-en="work experience">experiencia laboral</span>
+    <h2 class="section-title" data-en="Where I've worked">Dónde trabajé</h2>
+    <p class="section-hint" data-en="Tap each card to see the detail.">Tocá cada tarjeta para ver el detalle.</p>
 
     <div class="exp-list">
 
       <article class="exp-card" data-exp>
         <div class="exp-head" role="button" tabindex="0" aria-expanded="false" aria-controls="exp-body-1">
           <div>
-            <span class="exp-period">2026 — Actualidad</span>
-            <h3 class="exp-role">Desarrollador de Software</h3>
-            <span class="exp-company">SISIN S.R.L · Seguridad privada</span>
+            <span class="exp-period" data-en="2026 — Present">2026 — Actualidad</span>
+            <h3 class="exp-role" data-en="Software Developer">Desarrollador de Software</h3>
+            <span class="exp-company" data-en="SISIN S.R.L · Private security">SISIN S.R.L · Seguridad privada</span>
           </div>
           <span class="exp-toggle" aria-hidden="true">+</span>
         </div>
         <div class="exp-body" id="exp-body-1">
-          <p>Me desempeño como Desarrollador de Software participando en distintos proyectos de la empresa, entre ellos aplicaciones de control para hogares y barrios privados, un sistema de trackeo de flotas, el sistema de Recursos Humanos (RRHH) interno y un sistema de control de rondas para guardias de seguridad. Participo en todas las etapas del ciclo de desarrollo: análisis, diseño, implementación y depuración de software.</p>
+          <p data-en="I work as a Software Developer on several of the company's projects, including control apps for homes and gated communities, a fleet tracking system, the internal HR system, and a patrol control system for security guards. I take part in every stage of the development cycle: analysis, design, implementation and debugging.">Me desempeño como Desarrollador de Software participando en distintos proyectos de la empresa, entre ellos aplicaciones de control para hogares y barrios privados, un sistema de trackeo de flotas, el sistema de Recursos Humanos (RRHH) interno y un sistema de control de rondas para guardias de seguridad. Participo en todas las etapas del ciclo de desarrollo: análisis, diseño, implementación y depuración de software.</p>
           <div class="exp-tags">
             <span>Node.js</span><span>Express</span><span>React Native</span><span>React</span>
           </div>
@@ -125,13 +131,13 @@
         <div class="exp-head" role="button" tabindex="0" aria-expanded="false" aria-controls="exp-body-2">
           <div>
             <span class="exp-period">2024 — 2026</span>
-            <h3 class="exp-role">Desarrollador de Software · Co-fundador</h3>
-            <span class="exp-company">Hardstack · Agencia de desarrollo</span>
+            <h3 class="exp-role" data-en="Software Developer · Co-founder">Desarrollador de Software · Co-fundador</h3>
+            <span class="exp-company" data-en="Hardstack · Development agency">Hardstack · Agencia de desarrollo</span>
           </div>
           <span class="exp-toggle" aria-hidden="true">+</span>
         </div>
         <div class="exp-body" id="exp-body-2">
-          <p>Junto con dos compañeros más, inicié una agencia de desarrollo de software en la que trabajamos para distintas empresas creando sistemas de gestión, páginas web institucionales y páginas catálogo. Desarrollamos también sistemas integrales que combinaban aplicaciones móviles, de escritorio y web, implementando las APIs y la lógica de negocio correspondiente con Node.js y Express.</p>
+          <p data-en="Together with two other partners, I started a software development agency where we worked for different companies building management systems, institutional websites and catalog sites. We also built integrated systems combining mobile, desktop and web apps, implementing the corresponding APIs and business logic with Node.js and Express.">Junto con dos compañeros más, inicié una agencia de desarrollo de software en la que trabajamos para distintas empresas creando sistemas de gestión, páginas web institucionales y páginas catálogo. Desarrollamos también sistemas integrales que combinaban aplicaciones móviles, de escritorio y web, implementando las APIs y la lógica de negocio correspondiente con Node.js y Express.</p>
           <div class="exp-tags">
             <span>Node.js</span><span>Express</span><span>React Native</span><span>Desktop</span>
           </div>
@@ -142,13 +148,13 @@
         <div class="exp-head" role="button" tabindex="0" aria-expanded="false" aria-controls="exp-body-3">
           <div>
             <span class="exp-period">2023</span>
-            <h3 class="exp-role">Desarrollador Web Junior</h3>
+            <h3 class="exp-role" data-en="Junior Web Developer">Desarrollador Web Junior</h3>
             <span class="exp-company">Editorial Insomnes</span>
           </div>
           <span class="exp-toggle" aria-hidden="true">+</span>
         </div>
         <div class="exp-body" id="exp-body-3">
-          <p>Desarrollé una página web institucional a medida para Editorial Insomnes utilizando Vue.js, partiendo de un relevamiento previo de las necesidades del público al que apuntaba la marca. Ante la falta de una identidad visual definida, realicé además un trabajo de estudio de marca, armando la paleta de colores, tipografía y estilo general del sitio. Me encargué también de la maquetación responsive para distintos dispositivos y de la configuración y despliegue en un servicio de hosting.</p>
+          <p data-en="I built a custom institutional website for Editorial Insomnes using Vue.js, starting from research into the needs of the brand's target audience. Since there was no defined visual identity, I also did brand study work, putting together the color palette, typography and general style of the site. I also handled the responsive layout for different devices and the setup and deployment on a hosting service.">Desarrollé una página web institucional a medida para Editorial Insomnes utilizando Vue.js, partiendo de un relevamiento previo de las necesidades del público al que apuntaba la marca. Ante la falta de una identidad visual definida, realicé además un trabajo de estudio de marca, armando la paleta de colores, tipografía y estilo general del sitio. Me encargué también de la maquetación responsive para distintos dispositivos y de la configuración y despliegue en un servicio de hosting.</p>
           <div class="exp-tags">
             <span>Vue.js</span><span>Branding</span><span>Responsive</span><span>Hosting</span>
           </div>
@@ -161,7 +167,7 @@
   <!-- STACK -->
   <section class="section stack" id="sec-stack" data-title="Stack">
     <span class="eyebrow">stack</span>
-    <h2 class="section-title">Con qué trabajo</h2>
+    <h2 class="section-title" data-en="What I work with">Con qué trabajo</h2>
 
     <div class="stack-grid">
       <div class="stack-group">
@@ -177,24 +183,24 @@
         <div class="chips"><span>React Native</span><span>Expo</span><span>EAS</span><span>Firebase</span></div>
       </div>
       <div class="stack-group">
-        <h3>Base de datos</h3>
+        <h3 data-en="Database">Base de datos</h3>
         <div class="chips"><span>MySQL</span></div>
       </div>
       <div class="stack-group">
-        <h3>Herramientas</h3>
-        <div class="chips"><span>Git</span><span>Manipulación de servidores</span></div>
+        <h3 data-en="Tools">Herramientas</h3>
+        <div class="chips"><span>Git</span><span data-en="Server management">Manipulación de servidores</span></div>
       </div>
     </div>
   </section>
 
   <!-- CRAFT / MOBILE SPECIALTY -->
-  <section class="section craft" id="sec-craft" data-title="Especialidad">
-    <span class="eyebrow">mi fuerte</span>
+  <section class="section craft" id="sec-craft" data-title="Especialidad" data-title-en="Specialty">
+    <span class="eyebrow" data-en="my strength">mi fuerte</span>
     <div class="craft-layout">
       <div class="craft-text">
-        <h2 class="section-title">Donde más aporto: mobile</h2>
-        <p class="craft-copy">Hago de todo —web, back, desktop— pero cuando armamos equipo, mi lugar natural es el mobile. Ahí es donde más disfruto: React Native y Expo de punta a punta, desde la primera pantalla hasta la app corriendo en el celular. Me importa que se sienta nativa y no una web disfrazada: animaciones que reaccionan al tacto, estados de carga que no dejan a nadie mirando una pantalla en blanco.</p>
-        <button class="craft-replay" id="craftReplay" type="button">↻ reanimar</button>
+        <h2 class="section-title" data-en="Where I add the most: mobile">Donde más aporto: mobile</h2>
+        <p class="craft-copy" data-en="I do a bit of everything —web, back, desktop— but when we build a team, my natural spot is mobile. That's where I enjoy it most: React Native and Expo end-to-end, from the first screen to the app running on the phone. I care that it feels native, not a web page in disguise: animations that react to touch, loading states that don't leave anyone staring at a blank screen.">Hago de todo —web, back, desktop— pero cuando armamos equipo, mi lugar natural es el mobile. Ahí es donde más disfruto: React Native y Expo de punta a punta, desde la primera pantalla hasta la app corriendo en el celular. Me importa que se sienta nativa y no una web disfrazada: animaciones que reaccionan al tacto, estados de carga que no dejan a nadie mirando una pantalla en blanco.</p>
+        <button class="craft-replay" id="craftReplay" type="button" data-en="↻ replay">↻ reanimar</button>
       </div>
       <div class="phone-mock" id="phoneMock" aria-hidden="true">
         <span class="scrap" style="--tx:-86px; --ty:-64px; --rot:-50deg;"></span>
@@ -221,7 +227,7 @@
   </section>
 
   <!-- UNLOCK / ACHIEVEMENT -->
-  <section class="section unlock" id="sec-unlock" data-title="Logro">
+  <section class="section unlock" id="sec-unlock" data-title="Logro" data-title-en="Achievement">
     <div class="unlock-card" id="unlockCard">
       <div class="unlock-lock" id="unlockLock" aria-hidden="true">
         <span class="unlock-seal">
@@ -232,32 +238,32 @@
         </span>
       </div>
       <div class="unlock-content" id="unlockContent">
-        <span class="eyebrow">logro desbloqueado</span>
-        <h2 class="section-title">Medalla de oro — SysApp, ONIET</h2>
-        <p>Reconocimiento nacional en la categoría de desarrollo de sistemas.</p>
+        <span class="eyebrow" data-en="achievement unlocked">logro desbloqueado</span>
+        <h2 class="section-title" data-en="Gold medal — SysApp, ONIET">Medalla de oro — SysApp, ONIET</h2>
+        <p data-en="National recognition in the systems development category.">Reconocimiento nacional en la categoría de desarrollo de sistemas.</p>
       </div>
     </div>
   </section>
 
   <!-- EDUCATION + LANGUAGES -->
-  <section class="section education" id="sec-education" data-title="Educación">
-    <span class="eyebrow">educación</span>
+  <section class="section education" id="sec-education" data-title="Educación" data-title-en="Education">
+    <span class="eyebrow" data-en="education">educación</span>
     <div class="edu-grid">
       <div class="edu-block">
-        <h3>Título secundario en Ciencias Sociales y Humanidades</h3>
-        <p>Centro Educativo Siglo 21, Ituzaingó, Buenos Aires. Graduado en 2025.</p>
+        <h3 data-en="High school diploma in Social Sciences and Humanities">Título secundario en Ciencias Sociales y Humanidades</h3>
+        <p data-en="Centro Educativo Siglo 21, Ituzaingó, Buenos Aires. Graduated in 2025.">Centro Educativo Siglo 21, Ituzaingó, Buenos Aires. Graduado en 2025.</p>
       </div>
       <div class="edu-block">
-        <h3>Inglés — Upper Intermediate (B2)</h3>
+        <h3 data-en="English — Upper Intermediate (B2)">Inglés — Upper Intermediate (B2)</h3>
         <p>Certificado B2 First (FCE), Cambridge English — 2025.</p>
       </div>
     </div>
   </section>
 
   <!-- CONTACT -->
-  <section class="section contact" id="sec-contact" data-title="Contacto">
-    <span class="eyebrow">contacto</span>
-    <h2 class="section-title">Hablemos</h2>
+  <section class="section contact" id="sec-contact" data-title="Contacto" data-title-en="Contact">
+    <span class="eyebrow" data-en="contact">contacto</span>
+    <h2 class="section-title" data-en="Let's talk">Hablemos</h2>
     <p class="contact-hint">Ituzaingó, Buenos Aires, Argentina</p>
     <div class="contact-links">
       <a href="mailto:thiagomarti2008@gmail.com" class="contact-link">
@@ -265,7 +271,7 @@
         <span class="contact-value">thiagomarti2008@gmail.com</span>
       </a>
       <a href="tel:+541134104508" class="contact-link">
-        <span class="contact-label">Teléfono</span>
+        <span class="contact-label" data-en="Phone">Teléfono</span>
         <span class="contact-value">+54 11 3410-4508</span>
       </a>
       <a href="https://github.com/thiagomarti" target="_blank" rel="noopener" class="contact-link">
@@ -277,7 +283,7 @@
         <span class="contact-value">linkedin.com/in/thiago-martiñá</span>
       </a>
     </div>
-    <footer class="footer">Hecho por Thiago Martiñá.</footer>
+    <footer class="footer" data-en="Made by Thiago Martiñá.">Hecho por Thiago Martiñá.</footer>
   </section>
 
 </main>

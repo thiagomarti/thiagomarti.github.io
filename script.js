@@ -2,6 +2,37 @@
   const main = document.getElementById('main');
   const allSections = Array.from(document.querySelectorAll('.section'));
 
+  /* ---------- Language toggle ---------- */
+  let lang = localStorage.getItem('lang') === 'en' ? 'en' : 'es';
+  const langToggle = document.getElementById('langToggle');
+  const metaDesc = document.querySelector('meta[name="description"]');
+
+  function applyLang(){
+    document.documentElement.lang = lang === 'en' ? 'en' : 'es-AR';
+    langToggle.textContent = lang === 'en' ? 'ES' : 'EN';
+    langToggle.setAttribute('aria-label', lang === 'en' ? 'Cambiar a español' : 'Switch to English');
+
+    if (metaDesc) metaDesc.setAttribute('content', lang === 'en' ? metaDesc.dataset.contentEn : metaDesc.dataset.contentEs || metaDesc.getAttribute('content'));
+    if (rail.dataset.ariaEn) rail.setAttribute('aria-label', lang === 'en' ? rail.dataset.ariaEn : 'Progreso de lectura');
+
+    document.querySelectorAll('[data-en]').forEach(el => {
+      if (!el.dataset.es) el.dataset.es = el.textContent;
+      el.textContent = lang === 'en' ? el.dataset.en : el.dataset.es;
+    });
+
+    const selectedPersona = document.querySelector('.persona-card.selected');
+    if (selectedPersona) applyPersonaText(selectedPersona.dataset.persona);
+
+    buildRail();
+  }
+
+  if (metaDesc) metaDesc.dataset.contentEs = metaDesc.getAttribute('content');
+  langToggle.addEventListener('click', () => {
+    lang = lang === 'en' ? 'es' : 'en';
+    localStorage.setItem('lang', lang);
+    applyLang();
+  });
+
   /* ---------- Persona orders ---------- */
   const orders = {
     default:    ['sec-hero','sec-about','sec-stats','sec-experience','sec-stack','sec-craft','sec-unlock','sec-education','sec-contact'],
@@ -19,8 +50,9 @@
   }
 
   function applyPersonaText(persona){
+    const suffix = lang === 'en' ? '-en' : '';
     document.querySelectorAll('[data-persona-text]').forEach(el => {
-      const val = el.getAttribute(`data-${persona}`);
+      const val = el.getAttribute(`data-${persona}${suffix}`);
       if (val) el.textContent = val;
     });
   }
@@ -68,17 +100,18 @@
     const usable = order.filter(el => el.id !== 'sec-hero');
     const total = usable.length;
     usable.forEach((el, i) => {
+      const title = (lang === 'en' && el.dataset.titleEn) ? el.dataset.titleEn : (el.dataset.title || el.id);
       const li = document.createElement('li');
       li.className = 'rail-node';
       li.dataset.target = el.id;
       li.setAttribute('role', 'button');
       li.setAttribute('tabindex', '0');
-      li.setAttribute('aria-label', `Ir a ${el.dataset.title || el.id}`);
+      li.setAttribute('aria-label', `${lang === 'en' ? 'Go to' : 'Ir a'} ${title}`);
       const pct = total > 1 ? i / (total - 1) : 0;
       li.style.top = `calc(40px + (100% - 80px) * ${pct})`;
       const label = document.createElement('span');
       label.className = 'rail-node-label';
-      label.textContent = el.dataset.title || el.id;
+      label.textContent = title;
       li.appendChild(label);
       const goTo = () => el.scrollIntoView({ behavior: 'smooth', block: 'start' });
       li.addEventListener('click', goTo);
@@ -202,5 +235,5 @@
   unlockIO.observe(document.getElementById('unlockCard'));
 
   /* ---------- Init ---------- */
-  buildRail();
+  applyLang();
 })();
