@@ -87,9 +87,11 @@ h1{
   font: 700 clamp(34px, 5vw, 58px)/1.05 var(--sans);
   letter-spacing: -.035em; text-wrap: balance;
 }
+/* inline so a long highlight wraps line by line and keeps the period next to it */
 mark{
   background: var(--hl); color: var(--on-hl);
-  padding: 0 8px; display: inline-block; transform: rotate(-1deg);
+  padding: 0 8px;
+  -webkit-box-decoration-break: clone; box-decoration-break: clone;
 }
 .note{
   font: 700 26px var(--hand); color: var(--acc);
