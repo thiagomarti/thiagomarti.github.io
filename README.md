@@ -25,6 +25,6 @@ si querés esa variante (no requiere casi cambios, esto ya funciona con rutas re
 
 ```
 index.html   → contenido y estructura de las secciones
-styles.css   → paleta navy/dorado/cobre, tipografía (Fraunces + Inter + JetBrains Mono)
-script.js    → chooser de persona, barra de progreso, contadores animados, unlocks
+styles.css   → estilos (Bricolage Grotesque), modo oscuro y versión imprimible
+script.js    → toggle ES/EN
 ```

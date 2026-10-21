@@ -3,290 +3,195 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Thiago Martiñá — Software Developer</title>
-<meta name="description" content="CV interactivo de Thiago Martiñá, desarrollador de software." data-content-en="Interactive resume of Thiago Martiñá, software developer.">
+<title>Thiago Martiñá — Mobile y UI/UX</title>
+<meta name="description" content="Thiago Martiñá, desarrollador mobile con foco en UI/UX. Buenos Aires, Argentina." data-content-en="Thiago Martiñá, mobile developer focused on UI/UX. Buenos Aires, Argentina.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=Inter:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,700;12..96,800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-<!-- Signature element: the "tape trail" — vertical progress spine styled like pinned paper tags -->
-<button class="lang-toggle" id="langToggle" type="button" aria-label="Switch language / Cambiar idioma"><span class="flag flag-us" aria-hidden="true"></span>EN</button>
+<header class="top">
+  <a href="#top" class="mark" aria-label="Thiago Martiñá">TM</a>
+  <nav class="top-nav" aria-label="Secciones" data-aria-en="Sections">
+    <a href="#perfil" data-en="What I do">Qué hago</a>
+    <a href="#trabajos" data-en="Work">Trabajos</a>
+    <a href="#experiencia" data-en="Experience">Experiencia</a>
+    <a href="#stack">Stack</a>
+    <a href="#contacto" data-en="Contact">Contacto</a>
+  </nav>
+  <button class="lang" id="langToggle" type="button" aria-label="Switch to English">
+    <span data-l="es">ES</span><span class="lang-sep">/</span><span data-l="en">EN</span>
+  </button>
+</header>
 
-<nav class="rail" id="rail" aria-label="Progreso de lectura" data-aria-en="Reading progress">
-  <div class="rail-line"></div>
-  <div class="rail-fill" id="railFill"></div>
-  <ul class="rail-nodes" id="railNodes"></ul>
-</nav>
+<main id="top">
 
-<main id="main">
+  <section class="hero">
+    <h1 class="name">Thiago Martiñá</h1>
+    <p class="lead" data-en="Mobile developer focused on UI/UX. I build React Native apps that feel native, designed around the people who use them. Today I develop the control and security systems SISIN uses for homes, gated communities and businesses.">Desarrollador mobile con foco en UI/UX. Hago apps en React Native que se sienten nativas, pensadas desde quien las usa. Hoy desarrollo los sistemas de control y seguridad que usa SISIN para hogares, barrios privados y empresas.</p>
 
-  <!-- HERO / PERSONA CHOOSER -->
-  <section class="section hero" id="sec-hero" data-title="Inicio" data-title-en="Home">
-    <div class="hero-eyebrow" data-en="✂ made from clippings">✂ hecho con recortes</div>
-    <h1 class="hero-name">Thiago <span class="accent">Martiñá</span></h1>
-    <p class="hero-role">Software Developer — Buenos Aires, Argentina</p>
+    <dl class="facts">
+      <div><dt data-en="Currently">Actualmente</dt><dd>SISIN S.R.L</dd></div>
+      <div><dt data-en="Focus">Foco</dt><dd data-en="Mobile and UI/UX">Mobile y UI/UX</dd></div>
+      <div><dt data-en="Based in">Base</dt><dd>Ituzaingó, Buenos Aires</dd></div>
+      <div><dt data-en="Languages">Idiomas</dt><dd data-en="Spanish, English B2">Español, Inglés B2</dd></div>
+    </dl>
 
-    <div class="chooser">
-      <p class="chooser-prompt" data-en="This page changes depending on who's looking. Pick your path:">Esta página cambia según quién la mire. Elegí tu recorrido:</p>
-      <div class="chooser-cards" id="chooserCards">
-        <button class="persona-card" data-persona="reclutador">
-          <span class="persona-icon">◆</span>
-          <span class="persona-title" data-en="Recruiter">Reclutador</span>
-          <span class="persona-desc" data-en="Results, experience and concrete data, up front.">Resultados, experiencia y datos concretos, al frente.</span>
-        </button>
-        <button class="persona-card" data-persona="developer">
-          <span class="persona-icon">&lt;/&gt;</span>
-          <span class="persona-title">Developer</span>
-          <span class="persona-desc" data-en="Technical stack, architecture and implementation detail.">Stack técnico, arquitectura y detalle de implementación.</span>
-        </button>
-        <button class="persona-card" data-persona="curioso">
-          <span class="persona-icon">✦</span>
-          <span class="persona-title" data-en="Just curious">Curioseando</span>
-          <span class="persona-desc" data-en="The whole story, no rush.">La historia completa, sin apuro.</span>
-        </button>
-      </div>
-      <button class="skip-link" id="skipChooser" data-en="or show me everything in order →">o mostrame todo en orden →</button>
-    </div>
-
-    <div class="scroll-hint" id="scrollHint">
-      <span data-en="scroll">scrolleá</span>
-      <div class="scroll-hint-line"></div>
+    <div class="actions">
+      <a class="btn btn-solid" href="mailto:thiagomarti2008@gmail.com" data-en="Get in touch">Escribime</a>
+      <a class="btn" href="https://github.com/thiagomarti" target="_blank" rel="noopener">GitHub</a>
+      <a class="btn" href="https://www.linkedin.com/in/thiago-marti%C3%B1%C3%A1-369897254/" target="_blank" rel="noopener">LinkedIn</a>
     </div>
   </section>
 
-  <!-- ABOUT -->
-  <section class="section about" id="sec-about" data-title="Sobre mí" data-title-en="About me">
-    <span class="eyebrow" data-en="about me">sobre mí</span>
-    <p class="about-text" data-persona-text
-       data-reclutador="Desarrollador de software con experiencia en proyectos productivos reales: desde cofundar mi propia agencia hasta sistemas críticos en producción para una empresa establecida. Encaro cada proyecto de punta a punta, con foco en entregar y en trabajar en equipo."
-       data-reclutador-en="Software developer with experience on real production projects: from co-founding my own agency to critical production systems for an established company. I approach every project end-to-end, focused on delivering and working as a team."
-       data-developer="Full-stack con foco en TypeScript de punta a punta: React y Vue en el front, Node/NestJS/Express + Prisma en el back, React Native y Expo (con EAS y Firebase) en mobile. Me interesa entender el problema completo, no solo escribir el código."
-       data-developer-en="Full-stack with TypeScript end-to-end: React and Vue on the front, Node/NestJS/Express + Prisma on the back, React Native and Expo (with EAS and Firebase) on mobile. I care about understanding the full problem, not just writing the code."
-       data-curioso="Soy Thiago. Arranqué investigando por mi cuenta —tutoriales, foros y, más adelante, bastante ayuda de la IA— armando páginas que hoy, mirándolas con perspectiva, me doy cuenta que eran bastante feas (Aun así les tengo cariño: fueron mis primeros pasos). De ahí pasé a hacerlo en serio para una editorial, después monté una agencia con amigos, y hoy desarrollo los sistemas de control y seguridad que usa SISIN para hogares, barrios privados y empresas."
-       data-curioso-en="I'm Thiago. I started out figuring things out on my own —tutorials, forums, and later a lot of help from AI— building pages that, looking back, were pretty ugly (I'm still fond of them though: they were my first steps). From there I started doing it seriously for a publishing house, then set up an agency with friends, and today I build the control and security systems SISIN uses for homes, gated communities and businesses."
-       data-en="Full-stack software developer, focused on mobile. I build products end-to-end —from architecture to deploy— and enjoy solving a performance problem as much as polishing the last detail of an interface.">
-       Desarrollador de software full-stack, con foco en mobile. Construyo productos de punta a punta —de la arquitectura al deploy— y disfruto tanto resolver un problema de performance como pulir el último detalle de una interfaz.
-    </p>
-    <div class="soft-skills">
-      <span data-en="Good time management">Buena gestión del tiempo</span>
-      <span data-en="Teamwork">Trabajo en equipo</span>
-      <span data-en="Detail-oriented">Detallista</span>
-      <span data-en="Quick to adapt">Fácil adaptabilidad</span>
-      <span data-en="Analytical thinking">Pensamiento analítico</span>
+  <section class="block" id="perfil">
+    <h2 class="block-label"><span data-en="What I do">Qué hago</span></h2>
+    <div class="block-body prose">
+      <p data-en="I'm a <strong>mobile</strong> developer working with <strong>React Native</strong> and <strong>Expo</strong>, from the first screen to the app running on the phone. I want it to feel native, not like a web page in disguise, so I make every technical decision with the <strong>user experience</strong> in mind: interactions that respond to touch, loading states that never leave anyone staring at a blank screen, and <strong>flows</strong> that make sense without explanation.">Soy desarrollador <strong>mobile</strong> y trabajo con <strong>React Native</strong> y <strong>Expo</strong>, desde la primera pantalla hasta la app corriendo en el celular. Me importa que se sienta nativa y no una web disfrazada, por eso tomo cada decisión técnica pensando en la <strong>experiencia de usuario</strong>: interacciones que responden al tacto, estados de carga que no dejan a nadie mirando una pantalla en blanco y <strong>flujos</strong> que se entienden sin explicación.</p>
+      <p data-en="Before any <strong>UI/UX design</strong> decision I start by understanding who it's for. At Editorial Insomnes I did <strong>user research</strong> and from there defined the site's <strong>visual identity</strong> and <strong>hierarchy</strong>; at SISIN it means thinking about a guard mid-patrol who needs <strong>clear screens</strong> and one-tap actions. Behind the <strong>interface</strong> I handle the full stack in TypeScript, so I can take an idea from design to production.">Antes de cualquier decisión de <strong>diseño UI/UX</strong> arranco por entender para quién es. En Editorial Insomnes hice <strong>investigación de usuarios</strong> y a partir de ahí definí la <strong>identidad visual</strong> y la <strong>jerarquía</strong> del sitio; en SISIN eso significa pensar en un guardia en plena ronda que necesita <strong>pantallas claras</strong> y acciones de un toque. Detrás de la <strong>interfaz</strong> manejo el stack completo en TypeScript, así que puedo llevar una idea del diseño a producción.</p>
+      <ul class="traits">
+        <li data-en="Time management">Gestión del tiempo</li>
+        <li data-en="Teamwork">Trabajo en equipo</li>
+        <li data-en="Detail-oriented">Detallista</li>
+        <li data-en="Adaptability">Adaptabilidad</li>
+        <li data-en="Analytical thinking">Pensamiento analítico</li>
+      </ul>
     </div>
   </section>
 
-  <!-- STATS -->
-  <section class="section stats" id="sec-stats" data-title="En números" data-title-en="By the numbers">
-    <span class="eyebrow" data-en="by the numbers">en números</span>
-    <div class="stats-grid">
-      <div class="stat">
-        <span class="stat-number" data-target="3" data-suffix="+">0</span>
-        <span class="stat-label" data-en="years coding">años programando</span>
-      </div>
-      <div class="stat">
-        <span class="stat-number" data-target="3" data-suffix="">0</span>
-        <span class="stat-label" data-en="companies / projects">empresas / proyectos</span>
-      </div>
-      <div class="stat">
-        <span class="stat-number" data-target="14" data-suffix="">0</span>
-        <span class="stat-label" data-en="technologies in active use">tecnologías en uso activo</span>
-      </div>
-      <div class="stat">
-        <span class="stat-number" data-target="10" data-suffix="+">0</span>
-        <span class="stat-label" data-en="systems in production">sistemas en producción</span>
-      </div>
+  <section class="block work" id="trabajos">
+    <h2 class="block-label"><span data-en="Work">Trabajos</span></h2>
+
+    <div class="block-body">
+      <h3 class="job-role">SISIN MyHome</h3>
+      <p class="job-org" data-en="Mobile app redesign, light and dark mode">Rediseño de la app mobile, modo claro y oscuro</p>
+      <p data-en="Security app for homeowners: arm and disarm the alarm, check cameras, manage residents and service workers, and call for help with the panic button. I redesigned its 21 screens so the alarm status reads at a glance and panic is always one tap away, even from an Android widget and iOS quick actions.">App de seguridad para propietarios: armar y desarmar la alarma, ver cámaras, gestionar residentes y profesionales, y pedir ayuda con el botón de pánico. Rediseñé sus 21 pantallas para que el estado de la alarma se entienda de un vistazo y el pánico esté siempre a un toque, incluso desde un widget de Android y los accesos rápidos de iOS.</p>
     </div>
+      <ul class="shots">
+        <li><img src="img/myhome-home.webp" width="560" height="1177" loading="lazy" alt="Inicio con el estado de la alarma" data-alt-en="Home with alarm status"></li>
+        <li><img src="img/myhome-propiedades.webp" width="560" height="1177" loading="lazy" alt="Lista de propiedades por estado de alarma" data-alt-en="Properties listed by alarm status"></li>
+        <li><img src="img/myhome-detalle.webp" width="560" height="1177" loading="lazy" alt="Detalle de propiedad con armado y pánico" data-alt-en="Property detail with arm controls and panic"></li>
+        <li><img src="img/myhome-panico.webp" width="560" height="1177" loading="lazy" alt="Confirmación de alerta de pánico" data-alt-en="Panic alert confirmation"></li>
+      </ul>
+
+    <div class="block-body">
+      <h3 class="job-role">SISIN MyCountry</h3>
+      <p class="job-org" data-en="Gated community app and guard station">App para barrios cerrados y puesto de guardia</p>
+      <p data-en="Management and security for gated communities, for both owners and administrators: shared-space bookings, fees and payments, vehicles, deliveries and polls. I designed 19 mobile screens plus the guard station's desktop app, bringing many features together in a home of shortcuts and single-step flows.">Gestión y seguridad para countries y barrios cerrados, para propietarios y administración: reservas de espacios comunes, expensas y pagos, vehículos, correspondencia y votaciones. Diseñé 19 pantallas mobile y la app de escritorio del puesto de guardia, ordenando muchas funciones en una home de accesos directos y flujos de un solo paso.</p>
+    </div>
+      <ul class="shots">
+        <li><img src="img/mycountry-home.webp" width="560" height="1164" loading="lazy" alt="Inicio con novedades y accesos" data-alt-en="Home with news and shortcuts"></li>
+        <li><img src="img/mycountry-vehiculos.webp" width="560" height="1164" loading="lazy" alt="Vehículos registrados con patente" data-alt-en="Registered vehicles with plates"></li>
+        <li><img src="img/mycountry-reservas.webp" width="560" height="1164" loading="lazy" alt="Reserva del SUM en calendario" data-alt-en="Booking the common room on a calendar"></li>
+        <li><img src="img/mycountry-encuesta.webp" width="560" height="1164" loading="lazy" alt="Votación de una encuesta del barrio" data-alt-en="Voting in a community poll"></li>
+      </ul>
   </section>
 
-  <!-- EXPERIENCE -->
-  <section class="section experience" id="sec-experience" data-title="Experiencia" data-title-en="Experience">
-    <span class="eyebrow" data-en="work experience">experiencia laboral</span>
-    <h2 class="section-title" data-en="Where I've worked">Dónde trabajé</h2>
-    <p class="section-hint" data-en="Tap each card to see the detail.">Tocá cada tarjeta para ver el detalle.</p>
+  <section class="block" id="experiencia">
+    <h2 class="block-label"><span data-en="Experience">Experiencia</span></h2>
+    <div class="block-body">
 
-    <div class="exp-list">
-
-      <article class="exp-card" data-exp>
-        <div class="exp-head" role="button" tabindex="0" aria-expanded="false" aria-controls="exp-body-1">
-          <div>
-            <span class="exp-period" data-en="2026 — Present">2026 — Actualidad</span>
-            <h3 class="exp-role" data-en="Software Developer">Desarrollador de Software</h3>
-            <span class="exp-company" data-en="SISIN S.R.L · Private security">SISIN S.R.L · Seguridad privada</span>
-          </div>
-          <span class="exp-toggle" aria-hidden="true">+</span>
-        </div>
-        <div class="exp-body" id="exp-body-1">
-          <p data-en="I work as a Software Developer on several of the company's projects, including control apps for homes and gated communities, a fleet tracking system, the internal HR system, and a patrol control system for security guards. I take part in every stage of the development cycle: analysis, design, implementation and debugging.">Me desempeño como Desarrollador de Software participando en distintos proyectos de la empresa, entre ellos aplicaciones de control para hogares y barrios privados, un sistema de trackeo de flotas, el sistema de Recursos Humanos (RRHH) interno y un sistema de control de rondas para guardias de seguridad. Participo en todas las etapas del ciclo de desarrollo: análisis, diseño, implementación y depuración de software.</p>
-          <div class="exp-tags">
-            <span>Node.js</span><span>Express</span><span>React Native</span><span>React</span>
-          </div>
+      <article class="job">
+        <p class="job-period" data-en="2026–present">2026–hoy</p>
+        <div>
+          <h3 class="job-role" data-en="Software Developer">Desarrollador de Software</h3>
+          <p class="job-org" data-en="SISIN S.R.L, private security">SISIN S.R.L, seguridad privada</p>
+          <p data-en="I work across several of the company's products: control apps for homes and gated communities, a fleet tracking system, the internal HR system and a patrol control system for security guards. I take part in every stage of the cycle: analysis, design, implementation and debugging.">Participo en varios productos de la empresa: aplicaciones de control para hogares y barrios privados, un sistema de trackeo de flotas, el sistema interno de RRHH y un sistema de control de rondas para guardias de seguridad. Intervengo en todas las etapas del ciclo: análisis, diseño, implementación y depuración.</p>
+          <ul class="tags"><li>React Native</li><li>React</li><li>Node.js</li><li>Express</li></ul>
         </div>
       </article>
 
-      <article class="exp-card" data-exp>
-        <div class="exp-head" role="button" tabindex="0" aria-expanded="false" aria-controls="exp-body-2">
-          <div>
-            <span class="exp-period">2024 — 2026</span>
-            <h3 class="exp-role" data-en="Software Developer · Co-founder">Desarrollador de Software · Co-fundador</h3>
-            <span class="exp-company" data-en="Hardstack · Development agency">Hardstack · Agencia de desarrollo</span>
-          </div>
-          <span class="exp-toggle" aria-hidden="true">+</span>
-        </div>
-        <div class="exp-body" id="exp-body-2">
-          <p data-en="Together with two other partners, I started a software development agency where we worked for different companies building management systems, institutional websites and catalog sites. We also built integrated systems combining mobile, desktop and web apps, implementing the corresponding APIs and business logic with Node.js and Express.">Junto con dos compañeros más, inicié una agencia de desarrollo de software en la que trabajamos para distintas empresas creando sistemas de gestión, páginas web institucionales y páginas catálogo. Desarrollamos también sistemas integrales que combinaban aplicaciones móviles, de escritorio y web, implementando las APIs y la lógica de negocio correspondiente con Node.js y Express.</p>
-          <div class="exp-tags">
-            <span>Node.js</span><span>Express</span><span>React Native</span><span>Desktop</span>
-          </div>
+      <article class="job">
+        <p class="job-period">2024–2026</p>
+        <div>
+          <h3 class="job-role" data-en="Software Developer and co-founder">Desarrollador de Software y co-fundador</h3>
+          <p class="job-org" data-en="Hardstack, development agency">Hardstack, agencia de desarrollo</p>
+          <p data-en="Together with two partners I started a software agency building management systems, institutional websites and catalog sites for different companies. We also delivered integrated systems combining mobile, desktop and web apps, with their APIs and business logic in Node.js and Express.">Junto con dos socios inicié una agencia de software donde desarrollamos sistemas de gestión, sitios institucionales y catálogos para distintas empresas. También entregamos sistemas integrales que combinaban apps móviles, de escritorio y web, con sus APIs y lógica de negocio en Node.js y Express.</p>
+          <ul class="tags"><li>React Native</li><li>Desktop</li><li>Node.js</li><li>Express</li></ul>
         </div>
       </article>
 
-      <article class="exp-card" data-exp>
-        <div class="exp-head" role="button" tabindex="0" aria-expanded="false" aria-controls="exp-body-3">
-          <div>
-            <span class="exp-period">2023</span>
-            <h3 class="exp-role" data-en="Junior Web Developer">Desarrollador Web Junior</h3>
-            <span class="exp-company">Editorial Insomnes</span>
-          </div>
-          <span class="exp-toggle" aria-hidden="true">+</span>
-        </div>
-        <div class="exp-body" id="exp-body-3">
-          <p data-en="I built a custom institutional website for Editorial Insomnes using Vue.js, starting from research into the needs of the brand's target audience. Since there was no defined visual identity, I also did brand study work, putting together the color palette, typography and general style of the site. I also handled the responsive layout for different devices and the setup and deployment on a hosting service.">Desarrollé una página web institucional a medida para Editorial Insomnes utilizando Vue.js, partiendo de un relevamiento previo de las necesidades del público al que apuntaba la marca. Ante la falta de una identidad visual definida, realicé además un trabajo de estudio de marca, armando la paleta de colores, tipografía y estilo general del sitio. Me encargué también de la maquetación responsive para distintos dispositivos y de la configuración y despliegue en un servicio de hosting.</p>
-          <div class="exp-tags">
-            <span>Vue.js</span><span>Branding</span><span>Responsive</span><span>Hosting</span>
-          </div>
+      <article class="job">
+        <p class="job-period">2023</p>
+        <div>
+          <h3 class="job-role" data-en="Junior Web Developer">Desarrollador Web Junior</h3>
+          <p class="job-org">Editorial Insomnes</p>
+          <p data-en="Built a custom institutional website in Vue.js, starting from research into the brand's audience. With no visual identity in place, I also defined the color palette, typography and overall style, and handled the responsive layout and the deployment.">Desarrollé el sitio institucional a medida en Vue.js, partiendo de un relevamiento del público de la marca. Como no había identidad visual, definí también paleta, tipografía y estilo general, y me encargué de la maquetación responsive y el despliegue.</p>
+          <ul class="tags"><li data-en="User research">Investigación de usuarios</li><li data-en="Visual identity">Identidad visual</li><li>Responsive</li><li>Vue.js</li></ul>
         </div>
       </article>
 
     </div>
   </section>
 
-  <!-- STACK -->
-  <section class="section stack" id="sec-stack" data-title="Stack">
-    <span class="eyebrow">stack</span>
-    <h2 class="section-title" data-en="What I work with">Con qué trabajo</h2>
-
-    <div class="stack-grid">
-      <div class="stack-group">
-        <h3>Frontend</h3>
-        <div class="chips"><span>Vue.js</span><span>React</span><span>TypeScript</span><span>JavaScript</span></div>
-      </div>
-      <div class="stack-group">
-        <h3>Backend</h3>
-        <div class="chips"><span>Node.js</span><span>NestJS</span><span>Express</span><span>Prisma</span></div>
-      </div>
-      <div class="stack-group">
-        <h3>Mobile</h3>
-        <div class="chips"><span>React Native</span><span>Expo</span><span>EAS</span><span>Firebase</span></div>
-      </div>
-      <div class="stack-group">
-        <h3 data-en="Database">Base de datos</h3>
-        <div class="chips"><span>MySQL</span></div>
-      </div>
-      <div class="stack-group">
-        <h3 data-en="Tools">Herramientas</h3>
-        <div class="chips"><span>Git</span><span data-en="Server management">Manipulación de servidores</span></div>
-      </div>
+  <section class="block" id="stack">
+    <h2 class="block-label">Stack</h2>
+    <div class="block-body">
+      <dl class="stack">
+        <div><dt>Mobile</dt><dd><ul class="techs"><li><i style="--icon:url(https://cdn.jsdelivr.net/npm/simple-icons@11.0.0/icons/react.svg)"></i>React Native</li><li><i style="--icon:url(https://cdn.jsdelivr.net/npm/simple-icons@11.0.0/icons/expo.svg)"></i>Expo</li><li><i style="--icon:url(https://cdn.jsdelivr.net/npm/simple-icons@11.0.0/icons/expo.svg)"></i>EAS</li><li><i style="--icon:url(https://cdn.jsdelivr.net/npm/simple-icons@11.0.0/icons/firebase.svg)"></i>Firebase</li></ul></dd></div>
+        <div><dt>UI/UX</dt><dd data-en="User research, visual identity, responsive design">Investigación de usuarios, identidad visual, diseño responsive</dd></div>
+        <div><dt>Frontend</dt><dd><ul class="techs"><li><i style="--icon:url(https://cdn.jsdelivr.net/npm/simple-icons@11.0.0/icons/react.svg)"></i>React</li><li><i style="--icon:url(https://cdn.jsdelivr.net/npm/simple-icons@11.0.0/icons/vuedotjs.svg)"></i>Vue.js</li><li><i style="--icon:url(https://cdn.jsdelivr.net/npm/simple-icons@11.0.0/icons/typescript.svg)"></i>TypeScript</li><li><i style="--icon:url(https://cdn.jsdelivr.net/npm/simple-icons@11.0.0/icons/javascript.svg)"></i>JavaScript</li></ul></dd></div>
+        <div><dt>Backend</dt><dd><ul class="techs"><li><i style="--icon:url(https://cdn.jsdelivr.net/npm/simple-icons@11.0.0/icons/nodedotjs.svg)"></i>Node.js</li><li><i style="--icon:url(https://cdn.jsdelivr.net/npm/simple-icons@11.0.0/icons/nestjs.svg)"></i>NestJS</li><li><i style="--icon:url(https://cdn.jsdelivr.net/npm/simple-icons@11.0.0/icons/express.svg)"></i>Express</li><li><i style="--icon:url(https://cdn.jsdelivr.net/npm/simple-icons@11.0.0/icons/prisma.svg)"></i>Prisma</li></ul></dd></div>
+        <div><dt data-en="Database">Base de datos</dt><dd><ul class="techs"><li><i style="--icon:url(https://cdn.jsdelivr.net/npm/simple-icons@11.0.0/icons/mysql.svg)"></i>MySQL</li></ul></dd></div>
+        <div><dt data-en="Tools">Herramientas</dt><dd><ul class="techs"><li><i style="--icon:url(https://cdn.jsdelivr.net/npm/simple-icons@11.0.0/icons/git.svg)"></i>Git</li><li data-en="Server administration">Administración de servidores</li></ul></dd></div>
+      </dl>
     </div>
   </section>
 
-  <!-- CRAFT / MOBILE SPECIALTY -->
-  <section class="section craft" id="sec-craft" data-title="Especialidad" data-title-en="Specialty">
-    <span class="eyebrow" data-en="my strength">mi fuerte</span>
-    <div class="craft-layout">
-      <div class="craft-text">
-        <h2 class="section-title" data-en="Where I add the most: mobile">Donde más aporto: mobile</h2>
-        <p class="craft-copy" data-en="I do a bit of everything —web, back, desktop— but when we build a team, my natural spot is mobile. That's where I enjoy it most: React Native and Expo end-to-end, from the first screen to the app running on the phone. I care that it feels native, not a web page in disguise: animations that react to touch, loading states that don't leave anyone staring at a blank screen.">Hago de todo —web, back, desktop— pero cuando armamos equipo, mi lugar natural es el mobile. Ahí es donde más disfruto: React Native y Expo de punta a punta, desde la primera pantalla hasta la app corriendo en el celular. Me importa que se sienta nativa y no una web disfrazada: animaciones que reaccionan al tacto, estados de carga que no dejan a nadie mirando una pantalla en blanco.</p>
-        <button class="craft-replay" id="craftReplay" type="button" data-en="↻ replay">↻ reanimar</button>
-      </div>
-      <div class="phone-mock" id="phoneMock" aria-hidden="true">
-        <span class="scrap" style="--tx:-86px; --ty:-64px; --rot:-50deg;"></span>
-        <span class="scrap" style="--tx:78px; --ty:-80px; --rot:40deg;"></span>
-        <span class="scrap" style="--tx:-100px; --ty:20px; --rot:60deg;"></span>
-        <span class="scrap" style="--tx:96px; --ty:10px; --rot:-35deg;"></span>
-        <span class="scrap" style="--tx:-60px; --ty:100px; --rot:25deg;"></span>
-        <span class="scrap" style="--tx:70px; --ty:110px; --rot:-60deg;"></span>
-        <span class="scrap" style="--tx:-30px; --ty:-110px; --rot:80deg;"></span>
-        <span class="scrap" style="--tx:34px; --ty:120px; --rot:-20deg;"></span>
-        <div class="phone-frame">
-          <div class="phone-notch"></div>
-          <div class="phone-screen">
-            <span class="app-block bar"></span>
-            <span class="app-block card"></span>
-            <span class="app-block chip chip-a"></span>
-            <span class="app-block chip chip-b"></span>
-            <span class="app-block fab"></span>
-            <span class="app-block nav"></span>
-          </div>
+  <section class="block" id="reconocimientos">
+    <h2 class="block-label"><span data-en="Awards">Reconocimientos</span></h2>
+    <div class="block-body">
+      <article class="job award">
+        <p class="job-period">ONIET</p>
+        <div>
+          <h3 class="job-role" data-en="Gold medal in SysApp">Medalla de oro en SysApp</h3>
+          <p data-en="National recognition in the systems development category.">Reconocimiento nacional en la categoría de desarrollo de sistemas.</p>
         </div>
-      </div>
+      </article>
     </div>
   </section>
 
-  <!-- UNLOCK / ACHIEVEMENT -->
-  <section class="section unlock" id="sec-unlock" data-title="Logro" data-title-en="Achievement">
-    <div class="unlock-card" id="unlockCard">
-      <div class="unlock-lock" id="unlockLock" aria-hidden="true">
-        <span class="unlock-seal">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="5" y="11" width="14" height="9" rx="2"/>
-            <path d="M8 11V7a4 4 0 0 1 8 0v4"/>
-          </svg>
-        </span>
-      </div>
-      <div class="unlock-content" id="unlockContent">
-        <span class="eyebrow" data-en="achievement unlocked">logro desbloqueado</span>
-        <h2 class="section-title" data-en="Gold medal — SysApp, ONIET">Medalla de oro — SysApp, ONIET</h2>
-        <p data-en="National recognition in the systems development category.">Reconocimiento nacional en la categoría de desarrollo de sistemas.</p>
-      </div>
+  <section class="block" id="formacion">
+    <h2 class="block-label"><span data-en="Education">Formación</span></h2>
+    <div class="block-body">
+      <article class="job">
+        <p class="job-period">2025</p>
+        <div>
+          <h3 class="job-role" data-en="High school diploma, Social Sciences and Humanities">Bachiller en Ciencias Sociales y Humanidades</h3>
+          <p class="job-org">Centro Educativo Siglo 21, Ituzaingó</p>
+        </div>
+      </article>
+      <article class="job">
+        <p class="job-period">2025</p>
+        <div>
+          <h3 class="job-role" data-en="English, B2 First (FCE)">Inglés, B2 First (FCE)</h3>
+          <p class="job-org">Cambridge English</p>
+        </div>
+      </article>
     </div>
   </section>
 
-  <!-- EDUCATION + LANGUAGES -->
-  <section class="section education" id="sec-education" data-title="Educación" data-title-en="Education">
-    <span class="eyebrow" data-en="education">educación</span>
-    <div class="edu-grid">
-      <div class="edu-block">
-        <h3 data-en="High school diploma in Social Sciences and Humanities">Título secundario en Ciencias Sociales y Humanidades</h3>
-        <p data-en="Centro Educativo Siglo 21, Ituzaingó, Buenos Aires. Graduated in 2025.">Centro Educativo Siglo 21, Ituzaingó, Buenos Aires. Graduado en 2025.</p>
-      </div>
-      <div class="edu-block">
-        <h3 data-en="English — Upper Intermediate (B2)">Inglés — Upper Intermediate (B2)</h3>
-        <p>Certificado B2 First (FCE), Cambridge English — 2025.</p>
-      </div>
+  <section class="block contact" id="contacto">
+    <h2 class="block-label"><span data-en="Contact">Contacto</span></h2>
+    <div class="block-body">
+      <p class="contact-lead" data-en="Open to new opportunities. The fastest way to reach me is by email.">Abierto a nuevas oportunidades. La vía más rápida es el mail.</p>
+      <a class="contact-mail" href="mailto:thiagomarti2008@gmail.com">thiagomarti2008@gmail.com</a>
+      <ul class="contact-list">
+        <li><span data-en="Phone">Teléfono</span><a href="tel:+541134104508">+54 11 3410-4508</a></li>
+        <li><span>GitHub</span><a href="https://github.com/thiagomarti" target="_blank" rel="noopener">github.com/thiagomarti</a></li>
+        <li><span>LinkedIn</span><a href="https://www.linkedin.com/in/thiago-marti%C3%B1%C3%A1-369897254/" target="_blank" rel="noopener">in/thiago-martiñá</a></li>
+      </ul>
     </div>
-  </section>
-
-  <!-- CONTACT -->
-  <section class="section contact" id="sec-contact" data-title="Contacto" data-title-en="Contact">
-    <span class="eyebrow" data-en="contact">contacto</span>
-    <h2 class="section-title" data-en="Let's talk">Hablemos</h2>
-    <p class="contact-hint">Ituzaingó, Buenos Aires, Argentina</p>
-    <div class="contact-links">
-      <a href="mailto:thiagomarti2008@gmail.com" class="contact-link">
-        <span class="contact-label">Email</span>
-        <span class="contact-value">thiagomarti2008@gmail.com</span>
-      </a>
-      <a href="tel:+541134104508" class="contact-link">
-        <span class="contact-label" data-en="Phone">Teléfono</span>
-        <span class="contact-value">+54 11 3410-4508</span>
-      </a>
-      <a href="https://github.com/thiagomarti" target="_blank" rel="noopener" class="contact-link">
-        <span class="contact-label">GitHub</span>
-        <span class="contact-value">github.com/thiagomarti</span>
-      </a>
-      <a href="https://www.linkedin.com/in/thiago-marti%C3%B1%C3%A1-369897254/" target="_blank" rel="noopener" class="contact-link">
-        <span class="contact-label">LinkedIn</span>
-        <span class="contact-value">linkedin.com/in/thiago-martiñá</span>
-      </a>
-    </div>
-    <footer class="footer" data-en="Made by Thiago Martiñá.">Hecho por Thiago Martiñá.</footer>
   </section>
 
 </main>
+
+<footer class="foot">
+  <span>© 2026 Thiago Martiñá</span>
+  <span data-en="Ituzaingó, Buenos Aires">Ituzaingó, Buenos Aires</span>
+</footer>
 
 <script src="script.js"></script>
 </body>
