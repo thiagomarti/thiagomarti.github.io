@@ -16,6 +16,10 @@
     langBtn.querySelector('.lang-next').className = `flag ${en ? 'ar' : 'us'} lang-next`;
     langBtn.setAttribute('aria-label', en ? 'Cambiar a español' : 'Switch to English');
     metaDesc.setAttribute('content', en ? metaDesc.dataset.contentEn : metaDesc.dataset.contentEs);
+    document.querySelectorAll('[data-aria-en]').forEach(el => {
+      if (!el.dataset.ariaEs) el.dataset.ariaEs = el.getAttribute('aria-label');
+      el.setAttribute('aria-label', en ? el.dataset.ariaEn : el.dataset.ariaEs);
+    });
     document.querySelectorAll('[data-alt-en]').forEach(el => {
       if (!el.dataset.altEs) el.dataset.altEs = el.alt;
       el.alt = en ? el.dataset.altEn : el.dataset.altEs;
@@ -68,6 +72,21 @@
     tabs.forEach(t => t.classList.toggle('on', t.dataset.tab.split(' ').includes(e.target.id)));
   }), { rootMargin: '-45% 0px -50% 0px' });
   ['top', 'a-hist', 'a-skills', 'a-work', 'a-contact'].forEach(id => spy.observe(document.getElementById(id)));
+
+  /* ---------- Desktop / mobile switch on website cases ---------- */
+  document.querySelectorAll('.view-toggle').forEach(toggle => {
+    const group = toggle.closest('.group');
+    toggle.addEventListener('click', e => {
+      const btn = e.target.closest('button');
+      if (!btn) return;
+      toggle.querySelectorAll('button').forEach(b => b.setAttribute('aria-pressed', b === btn));
+      group.querySelectorAll('.gallery').forEach(g => {
+        g.hidden = g.dataset.view !== btn.dataset.view;
+        g.classList.remove('swap');
+        if (!g.hidden){ void g.offsetWidth; g.classList.add('swap'); g.scrollLeft = 0; }
+      });
+    });
+  });
 
   /* ---------- Lightbox (native <dialog>: Esc closes it for free) ---------- */
   const lb = document.getElementById('lightbox');

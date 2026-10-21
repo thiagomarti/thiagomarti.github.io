@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=Caveat:wght@500;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=5">
+<link rel="stylesheet" href="styles.css?v=6">
 </head>
 <body>
 <div class="prog" id="prog"></div>
@@ -177,12 +177,27 @@
       <div class="reveal"><h4 class="label" data-en="Process">Proceso</h4><p data-en="We worked side by side with the client the whole way, brainstorming and going through rounds of feedback until we reached the right design.">Trabajamos codo a codo con el cliente en todo momento, con brainstorming y rondas de correcciones hasta llegar al modelo ideal.</p></div>
     </div>
     <div class="group reveal">
-      <div class="group-head"><span class="hand-title" data-en="The site">El sitio</span><span class="swipe" data-en="swipe →">deslizá →</span><span class="group-note" data-en="Desktop and mobile. Tap to enlarge.">Escritorio y mobile. Tocá para ampliar.</span></div>
-      <div class="gallery">
-        <button type="button" class="shot site wide"><img src="img/onda-desk-hero.webp" width="1088" height="680" loading="lazy" alt="Inicio" data-alt-en="Home"><span data-en="Home">Inicio</span></button>
-        <button type="button" class="shot site"><img src="img/onda-mob-hero.webp" width="462" height="1000" loading="lazy" alt="Inicio en mobile" data-alt-en="Home on mobile"><span data-en="Home on mobile">Inicio en mobile</span></button>
-        <button type="button" class="shot site wide"><img src="img/onda-desk-about.webp" width="1100" height="626" loading="lazy" alt="Sobre mí" data-alt-en="About"><span data-en="About">Sobre mí</span></button>
-        <button type="button" class="shot site"><img src="img/onda-mob-about.webp" width="462" height="1000" loading="lazy" alt="Sobre mí en mobile" data-alt-en="About on mobile"><span data-en="About on mobile">Sobre mí en mobile</span></button>
+      <div class="group-head"><span class="hand-title" data-en="The site">El sitio</span><span class="group-note" data-en="Tap to enlarge.">Tocá para ampliar.</span>
+        <div class="view-toggle" role="group" aria-label="Vista" data-aria-en="View">
+          <button type="button" aria-pressed="true" data-view="desk"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="12" rx="1.5"/><path d="M8 20h8M12 16v4"/></svg><span data-en="Desktop">Escritorio</span></button>
+          <button type="button" aria-pressed="false" data-view="mob"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="7" y="2.5" width="10" height="19" rx="2"/><path d="M11 18.5h2"/></svg><span>Mobile</span></button>
+        </div>
+      </div>
+      <div class="gallery" data-view="desk">
+          <button type="button" class="shot site wide"><img src="img/onda-home-desk.webp" width="1100" height="688" loading="lazy" alt="Inicio" data-alt-en="Home"><span data-en="Home">Inicio</span></button>
+          <button type="button" class="shot site wide"><img src="img/onda-agency-desk.webp" width="1100" height="688" loading="lazy" alt="Sobre mí" data-alt-en="About"><span data-en="About">Sobre mí</span></button>
+          <button type="button" class="shot site wide"><img src="img/onda-work-desk.webp" width="1100" height="688" loading="lazy" alt="Últimos proyectos" data-alt-en="Latest work"><span data-en="Latest work">Últimos proyectos</span></button>
+          <button type="button" class="shot site wide"><img src="img/onda-servicios-desk.webp" width="1100" height="688" loading="lazy" alt="Servicios" data-alt-en="Services"><span data-en="Services">Servicios</span></button>
+          <button type="button" class="shot site wide"><img src="img/onda-planes-desk.webp" width="1100" height="688" loading="lazy" alt="Planes" data-alt-en="Plans"><span data-en="Plans">Planes</span></button>
+          <button type="button" class="shot site wide"><img src="img/onda-portfolio-desk.webp" width="1100" height="688" loading="lazy" alt="Portfolio" data-alt-en="Portfolio"><span data-en="Portfolio">Portfolio</span></button>
+      </div>
+      <div class="gallery" data-view="mob" hidden>
+          <button type="button" class="shot"><img src="img/onda-home-mob.webp" width="452" height="1000" loading="lazy" alt="Inicio" data-alt-en="Home"><span data-en="Home">Inicio</span></button>
+          <button type="button" class="shot"><img src="img/onda-agency-mob.webp" width="452" height="1000" loading="lazy" alt="Sobre mí" data-alt-en="About"><span data-en="About">Sobre mí</span></button>
+          <button type="button" class="shot"><img src="img/onda-work-mob.webp" width="452" height="1000" loading="lazy" alt="Últimos proyectos" data-alt-en="Latest work"><span data-en="Latest work">Últimos proyectos</span></button>
+          <button type="button" class="shot"><img src="img/onda-servicios-mob.webp" width="452" height="1000" loading="lazy" alt="Servicios" data-alt-en="Services"><span data-en="Services">Servicios</span></button>
+          <button type="button" class="shot"><img src="img/onda-planes-mob.webp" width="452" height="1000" loading="lazy" alt="Planes" data-alt-en="Plans"><span data-en="Plans">Planes</span></button>
+          <button type="button" class="shot"><img src="img/onda-portfolio-mob.webp" width="452" height="1000" loading="lazy" alt="Portfolio" data-alt-en="Portfolio"><span data-en="Portfolio">Portfolio</span></button>
       </div>
     </div>
   </article>
@@ -202,13 +217,25 @@
       <div class="reveal m-hide"><h4 class="label" data-en="Business model">Modelo</h4><p data-en="Free to try, and a one-time payment per trip for the full version. No subscription.">Gratis para probar y pago único por viaje para la versión completa. Sin suscripción.</p></div>
     </div>
     <div class="group reveal">
-      <div class="group-head"><span class="hand-title" data-en="The landing">La landing</span><span class="swipe" data-en="swipe →">deslizá →</span><span class="group-note" data-en="Landing on desktop and mobile. Tap to enlarge.">Landing en escritorio y mobile. Tocá para ampliar.</span></div>
-      <div class="gallery">
-        <button type="button" class="shot site wide"><img src="img/cop-desk-hero.webp" width="1100" height="550" loading="lazy" alt="Inicio" data-alt-en="Home"><span data-en="Home">Inicio</span></button>
-        <button type="button" class="shot site"><img src="img/cop-mob-route.webp" width="462" height="1000" loading="lazy" alt="Recorrido de ejemplo" data-alt-en="Sample route"><span data-en="Sample route">Recorrido de ejemplo</span></button>
-        <button type="button" class="shot site wide"><img src="img/cop-desk-features.webp" width="1100" height="519" loading="lazy" alt="Cómo se arma" data-alt-en="How it works"><span data-en="How it works">Cómo se arma</span></button>
-        <button type="button" class="shot site"><img src="img/cop-mob-steps.webp" width="462" height="1000" loading="lazy" alt="Pasos en mobile" data-alt-en="Steps on mobile"><span data-en="Steps on mobile">Pasos en mobile</span></button>
-        <button type="button" class="shot site wide"><img src="img/cop-desk-pricing.webp" width="1100" height="481" loading="lazy" alt="Precios" data-alt-en="Pricing"><span data-en="Pricing">Precios</span></button>
+      <div class="group-head"><span class="hand-title" data-en="The site">El sitio</span><span class="group-note" data-en="Tap to enlarge.">Tocá para ampliar.</span>
+        <div class="view-toggle" role="group" aria-label="Vista" data-aria-en="View">
+          <button type="button" aria-pressed="true" data-view="desk"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="12" rx="1.5"/><path d="M8 20h8M12 16v4"/></svg><span data-en="Desktop">Escritorio</span></button>
+          <button type="button" aria-pressed="false" data-view="mob"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="7" y="2.5" width="10" height="19" rx="2"/><path d="M11 18.5h2"/></svg><span>Mobile</span></button>
+        </div>
+      </div>
+      <div class="gallery" data-view="desk">
+          <button type="button" class="shot site wide"><img src="img/cop-home-desk.webp" width="1100" height="688" loading="lazy" alt="Inicio" data-alt-en="Home"><span data-en="Home">Inicio</span></button>
+          <button type="button" class="shot site wide"><img src="img/cop-como-desk.webp" width="1100" height="688" loading="lazy" alt="Cómo se arma" data-alt-en="How it works"><span data-en="How it works">Cómo se arma</span></button>
+          <button type="button" class="shot site wide"><img src="img/cop-precios-desk.webp" width="1100" height="688" loading="lazy" alt="Precios" data-alt-en="Pricing"><span data-en="Pricing">Precios</span></button>
+          <button type="button" class="shot site wide"><img src="img/cop-ingresar-desk.webp" width="1100" height="688" loading="lazy" alt="Ingreso" data-alt-en="Sign in"><span data-en="Sign in">Ingreso</span></button>
+      </div>
+      <div class="gallery" data-view="mob" hidden>
+          <button type="button" class="shot"><img src="img/cop-home-mob.webp" width="452" height="1000" loading="lazy" alt="Inicio" data-alt-en="Home"><span data-en="Home">Inicio</span></button>
+          <button type="button" class="shot"><img src="img/cop-route-mob.webp" width="452" height="1000" loading="lazy" alt="Recorrido de ejemplo" data-alt-en="Sample route"><span data-en="Sample route">Recorrido de ejemplo</span></button>
+          <button type="button" class="shot"><img src="img/cop-como-mob.webp" width="452" height="1000" loading="lazy" alt="Cómo se arma" data-alt-en="How it works"><span data-en="How it works">Cómo se arma</span></button>
+          <button type="button" class="shot"><img src="img/cop-features-mob.webp" width="452" height="1000" loading="lazy" alt="Lo que calcula" data-alt-en="What it works out"><span data-en="What it works out">Lo que calcula</span></button>
+          <button type="button" class="shot"><img src="img/cop-precios-mob.webp" width="452" height="1000" loading="lazy" alt="Precios" data-alt-en="Pricing"><span data-en="Pricing">Precios</span></button>
+          <button type="button" class="shot"><img src="img/cop-ingresar-mob.webp" width="452" height="1000" loading="lazy" alt="Ingreso" data-alt-en="Sign in"><span data-en="Sign in">Ingreso</span></button>
       </div>
     </div>
   </article>
@@ -240,6 +267,6 @@
   <button type="button" class="lb-close" aria-label="Cerrar">×</button>
 </dialog>
 
-<script src="script.js?v=5"></script>
+<script src="script.js?v=6"></script>
 </body>
 </html>
