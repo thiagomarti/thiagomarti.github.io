@@ -22,8 +22,8 @@
   function applyLang(){
     const en = lang === 'en';
     root.lang = en ? 'en' : 'es-AR';
-    langBtn.querySelector('.lang-cur').textContent = en ? 'EN' : 'ES';
-    langBtn.querySelector('.lang-next').textContent = en ? ' → ES' : ' → EN';
+    langBtn.querySelector('.lang-cur').className = `flag ${en ? 'us' : 'ar'} lang-cur`;
+    langBtn.querySelector('.lang-next').className = `flag ${en ? 'ar' : 'us'} lang-next`;
     langBtn.setAttribute('aria-label', en ? 'Cambiar a español' : 'Switch to English');
     metaDesc.setAttribute('content', en ? metaDesc.dataset.contentEn : metaDesc.dataset.contentEs);
     document.querySelectorAll('[data-alt-en]').forEach(el => {
