@@ -25,6 +25,6 @@ si querés esa variante (no requiere casi cambios, esto ya funciona con rutas re
 
 ```
 index.html   → contenido y estructura de las secciones
-styles.css   → estilos (Bricolage Grotesque + Caveat + JetBrains Mono), tema claro/oscuro
-script.js    → toggles ES/EN y tema, barra de progreso, animación al scrollear y visor de capturas
+styles.css   → estilos (Bricolage Grotesque + Caveat + JetBrains Mono)
+script.js    → toggle ES/EN, barra de progreso, animación al scrollear y visor de capturas
 ```

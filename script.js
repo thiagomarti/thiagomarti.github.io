@@ -3,21 +3,11 @@
   const store = (k, v) => { try { localStorage.setItem(k, v); } catch (e) {} };
   const load = k => { try { return localStorage.getItem(k); } catch (e) { return null; } };
 
-  /* ---------- Language + theme toggles ---------- */
+  /* ---------- Language toggle ---------- */
   let lang = load('lang') === 'en' ? 'en' : 'es';
   const langBtn = document.getElementById('langBtn');
-  const themeBtn = document.getElementById('themeBtn');
   const metaDesc = document.querySelector('meta[name="description"]');
   metaDesc.dataset.contentEs = metaDesc.getAttribute('content');
-
-  function labelTheme(){
-    const en = lang === 'en', dark = root.dataset.theme === 'dark';
-    const txt = dark ? (en ? 'light' : 'claro') : (en ? 'dark' : 'oscuro');
-    // mobile hides .theme-txt and shows only the icon, so the label goes to aria-label too
-    themeBtn.querySelector('.theme-ico').textContent = dark ? '☀' : '☾';
-    themeBtn.querySelector('.theme-txt').textContent = ' ' + txt;
-    themeBtn.setAttribute('aria-label', txt);
-  }
 
   function applyLang(){
     const en = lang === 'en';
@@ -35,19 +25,12 @@
       if (!el.dataset.es) el.dataset.es = el.innerHTML;
       el.innerHTML = en ? el.dataset.en : el.dataset.es;
     });
-    labelTheme();
   }
 
   langBtn.addEventListener('click', () => {
     lang = lang === 'en' ? 'es' : 'en';
     store('lang', lang);
     applyLang();
-  });
-  themeBtn.addEventListener('click', () => {
-    const dark = root.dataset.theme !== 'dark';
-    if (dark) root.dataset.theme = 'dark'; else delete root.dataset.theme;
-    store('theme', dark ? 'dark' : 'light');
-    labelTheme();
   });
 
   /* ---------- Reading progress bar ---------- */
