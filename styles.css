@@ -199,6 +199,13 @@ h2{ font: 800 clamp(34px, 5vw, 44px) var(--sans); letter-spacing: -.03em; }
 .shot img{ display: block; height: 500px; width: auto; max-width: none; }
 .shot.wide img{ height: 340px; }
 .shot span{ font: 500 12.5px var(--mono); color: var(--mute); }
+/* bare website screenshots get the same ink outline as the cards */
+.shot.site img{ border: 1.5px solid var(--ink); }
+.case-link{
+  display: inline-block; margin-top: 14px;
+  font: 600 13px var(--mono); text-decoration: none;
+  border-bottom: 1.5px solid var(--acc); padding: 6px 0;
+}
 
 /* ===== Contact ===== */
 .contact{
