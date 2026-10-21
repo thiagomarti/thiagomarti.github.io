@@ -252,14 +252,19 @@ h2{ font: 800 clamp(34px, 5vw, 44px) var(--sans); letter-spacing: -.03em; }
   .pill-btn{ min-width: 44px; height: 44px; padding: 0 10px; font-size: 12px; }
   .pill-btn.solid{ width: 44px; padding: 0; border-radius: 50%; font-size: 16px; }
 
-  .hero{ padding: 28px 0 10px; gap: 26px; }
+  .hero{ padding: 28px 0 10px; }
   .kicker{ font-size: 13px; margin-bottom: 12px; }
   h1{ font-size: 40px; line-height: 1.06; }
   mark{ padding: 0 7px; }
   .note{ font-size: 24px; margin-top: 8px; }
   .intro{ font-size: 16px; line-height: 1.55; margin-top: 16px; }
-  /* photo goes first on mobile, above the greeting */
-  .polaroid-wrap{ order: -1; width: 200px; height: 206px; aspect-ratio: auto; margin-top: 14px; }
+  /* mobile order: greeting, photo, then headline and the rest.
+     display:contents lifts the text's children into the hero grid so the photo can sit between them */
+  .hero{ gap: 0; }
+  .hero-text{ display: contents; }
+  .hero-text > *{ order: 2; }
+  .hero-text > .kicker{ order: 0; }
+  .polaroid-wrap{ order: 1; width: 200px; height: 206px; aspect-ratio: auto; margin: 26px auto 30px; }
   .polaroid{ inset: 0; padding: 10px 10px 36px; box-shadow: 6px 6px 0 var(--ink); }
   .polaroid figcaption{ bottom: 6px; left: 14px; font-size: 22px; }
   .sticker{ width: 76px; height: 76px; top: -14px; right: -30px; font-size: 12px; }
