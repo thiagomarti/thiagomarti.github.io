@@ -91,12 +91,32 @@
   /* ---------- Lightbox (native <dialog>: Esc closes it for free) ---------- */
   const lb = document.getElementById('lightbox');
   const lbImg = lb.querySelector('img');
+  const prev = lb.querySelector('.lb-prev');
+  const next = lb.querySelector('.lb-next');
+  let set = [], at = 0;
+  const show = i => {
+    at = (i + set.length) % set.length; // wraps around
+    lbImg.src = set[at].src;
+    lbImg.alt = set[at].alt;
+  };
+  // browse within the gallery the shot came from
   document.querySelectorAll('.shot').forEach(btn => btn.addEventListener('click', () => {
-    const img = btn.querySelector('img');
-    lbImg.src = img.src;
-    lbImg.alt = img.alt;
+    set = [...btn.closest('.gallery').querySelectorAll('.shot img')];
+    show(set.indexOf(btn.querySelector('img')));
     lb.showModal();
   }));
+  prev.addEventListener('click', e => { e.stopPropagation(); show(at - 1); });
+  next.addEventListener('click', e => { e.stopPropagation(); show(at + 1); });
+  lb.addEventListener('keydown', e => {
+    if (e.key === 'ArrowLeft') show(at - 1);
+    if (e.key === 'ArrowRight') show(at + 1);
+  });
+  let x0 = null;
+  lb.addEventListener('touchstart', e => { x0 = e.touches[0].clientX; }, { passive: true });
+  lb.addEventListener('touchend', e => {
+    const dx = e.changedTouches[0].clientX - x0;
+    if (Math.abs(dx) > 50) show(at + (dx < 0 ? 1 : -1));
+  });
   lb.addEventListener('click', () => lb.close());
 
   applyLang();
